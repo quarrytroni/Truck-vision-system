@@ -1,0 +1,19 @@
+# System Architecture
+
+## Data Flow
+1. **Side Cameras**: ESP32-S3 captures OV2640 frames → streams MJPEG over Ethernet to Portenta H7
+2. **Rear Camera**: OV5640 connected directly to Portenta H7 via Vision Shield CSI
+3. **Portenta H7**: 
+   - Receives all streams
+   - Detects reverse gear (GPIO)
+   - Runs motion detection (PIR + frame differencing)
+4. **Displays**: Pi Zero clients request live view from Portenta over HTTP
+
+## Camera Selection
+- **OV5640 (Rear)**: Chosen for 5MP resolution [[21]]. Note: OV2640 has better low-light due to larger pixels (2.2µm vs 1.4µm) [[19]], but OV5640 provides more detail for anti-theft recording.
+- **OV2640 (Sides)**: Stable drivers on ESP32-S3 [[20]].
+
+## Night Vision
+- IR-optimized OV5640 (no IR-cut filter)
+- 850nm IR LED array (12V, 20W)
+- PIR sensor triggers recording when motion detected
