@@ -1,0 +1,11 @@
+Part,Qty,Description,Source
+Arduino Portenta H7,1,Central processor,Arduino Store
+Portenta Vision Shield,1,Ethernet + CSI camera interface,Arduino Store
+ESP32-S3-CAM,4,Side camera nodes (OV2640),AliExpress
+OV5640 MIPI Camera,1,Rear camera (5MP),ArduCam
+Raspberry Pi Zero W,2,Display clients,Amazon
+5" HDMI LCD,2,Side displays,Amazon
+HC-SR04,2,Rear parking sensors,
+HC-SR501,1,PIR motion sensor,
+IR LED Flood Light,1,850nm, 20W,Security supplier
+Optocoupler,1,Reverse gear signal isolation,
